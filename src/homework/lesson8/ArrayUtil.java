@@ -16,6 +16,7 @@ public class ArrayUtil {
                 max = array[i];
             }
         }
+
         System.out.println("max = " + max);
         //Տպել մասիվի ամենափոքր թիվը:
         int min = array[0];
