@@ -9,14 +9,13 @@ public class ArrayUtil {
         }
         System.out.println();
 
-//Տպել մասիվի ամենամեծ թիվը:
+        //Տպել մասիվի ամենամեծ թիվը:
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
             }
         }
-
         System.out.println("max = " + max);
         //Տպել մասիվի ամենափոքր թիվը:
         int min = array[0];
@@ -29,15 +28,17 @@ public class ArrayUtil {
         //Տպել մասիվի զույգ էլեմենտները:
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
-                System.out.println(array[i]);
+                System.out.print(array[i] + " ");
             }
         }
+        System.out.println();
         //Տպել մասիվի կենտ էլեմենտները:
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 != 0) {
-                System.out.println(array[i]);
+                System.out.print(array[i] + " ");
             }
         }
+        System.out.println();
         //Տպեք կենտերի քանակը:
         int oddCount = 0;
         for (int i = 0; i < array.length; i++) {
