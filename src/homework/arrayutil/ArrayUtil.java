@@ -1,4 +1,4 @@
-package homework.lesson8;
+package homework.arrayutil;
 
 public class ArrayUtil {
     public static void main(String[] args) {
@@ -69,10 +69,6 @@ public class ArrayUtil {
         System.out.println("mean " + mean);
     }
 }
-
-
-
-
 
 
 
