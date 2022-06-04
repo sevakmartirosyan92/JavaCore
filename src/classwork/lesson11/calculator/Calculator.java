@@ -10,6 +10,7 @@ package classwork.lesson11.calculator;
 //օգտագործենք մեր 4 մեթոդը
 public class Calculator {
     double plus(double a, double b) {
+
         return a + b;
     }
 
