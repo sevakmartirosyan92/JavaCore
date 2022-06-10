@@ -1,8 +1,8 @@
-package classwork.lesson11.stack;
+package homework.bracecheker;
 
 public class Stack {
-    int[] array = new int[10];
-    int index;
+    private int stck[] = new int[10];
+    private  int index;
 
     Stack() {
         index = -1;
@@ -12,7 +12,7 @@ public class Stack {
         if (index == 9)
             System.out.println("Cтeк заполнен.");
         else
-            array[++index] = value;
+            stck[++index] = value;
     }
 
     int pop() {
@@ -20,6 +20,6 @@ public class Stack {
             System.out.println("Cтeк не загружен.");
             return 0;
         } else
-            return array[index--];
+            return stck[index--];
     }
 }
