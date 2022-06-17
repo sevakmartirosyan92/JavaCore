@@ -3,17 +3,12 @@ package classwork.dinamicarray;
 public class DinamicArrayDemo {
     public static void main(String[] args) {
         DinamicArray array = new DinamicArray();
-        array.add(8);
-        array.add(86);
-        array.add(76);
-        array.add(0);
-        array.add(3);
-        array.add(3);
-        array.add(3);
-        array.add(3);
-        array.add(3);
-        array.add(3);
-        array.add(4);
-        array.print();
+        //Գրել մեթոդ isEmpty անունով, որը կվերադարձնի true եթե մեր dynamicArray-ի մեջ չունենանք ոչ մի էլեմենտ.
+        // Եթե ունենք՝ false
+        System.out.println(array.size == 0);
+        System.out.println(array.size != 0);
+    //Գրել մեթոդ getByIndex անունով, որը կընդունի ինդեքս, և կվերադարձնի այդ ինդեքսի տակ ընկած թիվը,
+    // եթե չկա թող վերադարձնի 0;
+        
     }
 }

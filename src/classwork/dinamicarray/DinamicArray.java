@@ -4,9 +4,10 @@ public class DinamicArray {
     int[] array = new int[10];
     int size = 0;
 
+
     void add(int value) {
-        if (size == array.length){
-           increaseArray();
+        if (size == array.length) {
+            increaseArray();
         }
         array[size++] = value;
     }
