@@ -3,7 +3,7 @@ package homework.bracechecker;
 public class BraceChecker {
 
     public String text;
-    public Stack mystack = new Stack();
+    private final Stack stack = new Stack();
 
     public BraceChecker(String text) {
         this.text = text;
@@ -12,24 +12,37 @@ public class BraceChecker {
     public void check() {
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
-            switch (text) {
-                case "(":
-                case "{":
-                case "[":
-                    System.out.println("Error: opened" + c);
-                    mystack.push(c);
+            int pop;
+            switch (c) {
+                case '(':
+                case '{':
+                case '[':
+                    stack.push(c);
                     break;
-            }
-            for (int j = 0; j < text.length(); j++) {
-                switch (text) {
-                    case ")":
-                    case "}":
-                    case "]":
-                        System.out.println("but closed" + c);
-                        mystack.pop();
-                        break;
-                }
-
+                case ')':
+                     pop = stack.pop();
+                    if (pop == 0) {
+                        System.err.println("Error: closed " + c + " but not opened at " + i);
+                    } else if (pop != '(') {
+                        System.err.println("Error: closed " + c + " but opened "+ (char)pop + " at " + i);
+                    }
+                    break;
+                    case '}':
+                     pop = stack.pop();
+                    if (pop == 0) {
+                        System.err.println("Error: closed " + c + " but not opened at " + i);
+                    } else if (pop != '{') {
+                        System.err.println("Error: closed " + c + " but opened "+ (char)pop + " at " + i);
+                    }
+                    break;
+                    case ']':
+                     pop = stack.pop();
+                    if (pop == 0) {
+                        System.err.println("Error: closed " + c + " but not opened at " + i);
+                    } else if (pop != '[') {
+                        System.err.println("Error: closed " + c + " but opened "+ (char)pop + " at " + i);
+                    }
+                    break;
             }
         }
     }
