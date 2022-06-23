@@ -17,6 +17,7 @@ public class StudentDemo {
             System.out.println("Pleae input 3 for print students count");
             System.out.println("Pleae input 4 for delete student by index");
             System.out.println("Pleae input 5 for print students by lesson");
+            System.out.println("Please choose 6 for change student's lesson");
             int command = Integer.parseInt(scanner.nextLine());
             switch (command) {
                 case 0:
@@ -32,22 +33,38 @@ public class StudentDemo {
                     System.out.println(studentStorage.getSize());
                     break;
                 case 4:
-                    studentStorage.println();
-                    System.out.println("Please choose student index");
-                    int index = Integer.parseInt(scanner.nextLine());
-                    studentStorage.delete(index);
+                    studentStorage();
                     break;
                 case 5:
-                    System.out.println("please input lesson name");
-                    String lessonName = scanner.nextLine();
-                    studentStorage.printStudentByLesson(lessonName);
+                    lessonName();
                     break;
+                case 6:
+                    changeLesson();
                 default:
                     System.out.println("Invalid command, please try again");
                     break;
             }
         }
 
+    }
+
+    private static void changeLesson() {
+        System.out.println("Please change lesson");
+        String changeLesson = scanner.nextLine();
+        studentStorage.changeStudentLesson(changeLesson);
+    }
+
+    private static void studentStorage() {
+        studentStorage.println();
+        System.out.println("Please choose student index");
+        int index = Integer.parseInt(scanner.nextLine());
+        studentStorage.delete(index);
+    }
+
+    private static void lessonName() {
+        System.out.println("please input lesson name");
+        String lessonName = scanner.nextLine();
+        studentStorage.printStudentByLesson(lessonName);
     }
 
     private static void addStudent() {

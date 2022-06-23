@@ -1,5 +1,7 @@
 package classwork.students;
 
+import java.nio.charset.StandardCharsets;
+
 public class StudentStorage {
     private Student[] array = new Student[10];
     private int size = 0;
@@ -38,16 +40,25 @@ public class StudentStorage {
             }
             size--;
             System.out.println("student deleted");
-        }else {
+        } else {
             System.out.println("index of bound");
         }
     }
 
     public void printStudentByLesson(String lessonName) {
         for (int i = 0; i < size; i++) {
-            if (array[i].getLesson().equals(lessonName)){
-                System.out.println(array[i])   ;
+            if (array[i].getLesson().equals(lessonName)) {
+                System.out.println(array[i]);
             }
+        }
+    }
+
+    public void changeStudentLesson(String changeLesson) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].getLesson().contentEquals(changeLesson)){
+                System.out.println(array[i]);
+            }
+
         }
     }
 }
