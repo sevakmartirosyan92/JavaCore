@@ -51,7 +51,7 @@ public class StudentDemo {
     private static void changeLesson() {
         System.out.println("Please change lesson");
         String changeLesson = scanner.nextLine();
-        studentStorage.changeStudentLesson(changeLesson);
+        System.out.println(changeLesson);
     }
 
     private static void studentStorage() {
@@ -80,6 +80,8 @@ public class StudentDemo {
         String city = scanner.nextLine();
         System.out.println("Please input student lesson");
         String lesson = scanner.nextLine();
+
+
 
         int age = Integer.parseInt(ageStr);
         Student student = new Student(name, surname, age, phoneNumber, city, lesson);

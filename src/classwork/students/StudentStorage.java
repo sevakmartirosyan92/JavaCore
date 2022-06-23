@@ -53,12 +53,16 @@ public class StudentStorage {
         }
     }
 
-    public void changeStudentLesson(String changeLesson) {
-        for (int i = 0; i < size; i++) {
-            if (array[i].getLesson().equals(changeLesson)){
-                System.out.println(array[i]);
+    public int changeStudentLesson(int index ) {
+        if (index >= 0 && index < size) {
+            for (int i = index; i < size; i++) {
+                array[index] = array[index + 1];
             }
+            size--;
+            System.out.println("lesson changed");
+        }else
+            System.out.println("index of bound");
+        return index;
+    }
 
         }
-    }
-}
