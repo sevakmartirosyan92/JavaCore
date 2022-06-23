@@ -11,13 +11,13 @@ public class StudentDemo {
     public static void main(String[] args) {
         boolean run = true;
         while (run) {
-            System.out.println("Pleae input 0 for exit");
-            System.out.println("Pleae input 1 for add student");
-            System.out.println("Pleae input 2 for print all students");
-            System.out.println("Pleae input 3 for print students count");
-            System.out.println("Pleae input 4 for delete student by index");
-            System.out.println("Pleae input 5 for print students by lesson");
-            System.out.println("Please choose 6 for change student's lesson");
+            System.out.println("Please input 0 for exit");
+            System.out.println("Please input 1 for add student");
+            System.out.println("Please input 2 for print all students");
+            System.out.println("Please input 3 for print students count");
+            System.out.println("Please input 4 for delete student by index");
+            System.out.println("Please input 5 for print students by lesson");
+            System.out.println("Please input 6 for change student's lesson");
             int command = Integer.parseInt(scanner.nextLine());
             switch (command) {
                 case 0:
