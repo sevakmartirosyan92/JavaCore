@@ -1,11 +1,8 @@
 package classwork.students;
 
-import java.nio.charset.StandardCharsets;
-
 public class StudentStorage {
     private Student[] array = new Student[10];
     private int size = 0;
-
 
     public void add(Student student) {
         if (size == array.length) {
@@ -22,7 +19,7 @@ public class StudentStorage {
         array = temp;
     }
 
-    public void println() {
+    public void print() {
         for (int i = 0; i < size; i++) {
             System.out.println(i + ". " + array[i] + " ");
 
@@ -36,16 +33,16 @@ public class StudentStorage {
     public void delete(int index) {
         if (index >= 0 && index < size) {
             for (int i = index; i < size; i++) {
-                array[index] = array[index + 1];
+                array[i] = array[i + 1];
             }
             size--;
-            System.out.println("student deleted");
+            System.out.println("Student deleted");
         } else {
-            System.out.println("index of bound");
+            System.out.println("Index out of bounds");
         }
     }
 
-    public void printStudentByLesson(String lessonName) {
+    public void printByLesson(String lessonName) {
         for (int i = 0; i < size; i++) {
             if (array[i].getLesson().equals(lessonName)) {
                 System.out.println(array[i]);
@@ -53,16 +50,10 @@ public class StudentStorage {
         }
     }
 
-    public int changeStudentLesson(int index ) {
+    public Student getStudentByIndex(int index) {
         if (index >= 0 && index < size) {
-            for (int i = index; i < size; i++) {
-                array[index] = array[index + 1];
-            }
-            size--;
-            System.out.println("lesson changed");
-        }else
-            System.out.println("index of bound");
-        return index;
-    }
-
+            return array[index];
         }
+        return null;
+    }
+}

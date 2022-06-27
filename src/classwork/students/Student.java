@@ -1,7 +1,6 @@
 package classwork.students;
 
 public class Student {
-
     private String name;
     private String surname;
     private int age;
@@ -18,7 +17,15 @@ public class Student {
         this.lesson = lesson;
     }
 
-    public Student() {
+    public Student(String name, String surname, int age, String phoneNumber, String city) {
+    }
+
+    public String getLesson() {
+        return lesson;
+    }
+
+    public void setLesson(String lesson) {
+        this.lesson = lesson;
     }
 
     public String getName() {
@@ -61,14 +68,6 @@ public class Student {
         this.city = city;
     }
 
-    public String getLesson() {
-        return lesson;
-    }
-
-    public void setLesson(String lesson) {
-        this.lesson = lesson;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
@@ -76,9 +75,8 @@ public class Student {
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", lesson='" + lesson + '\'' +
                 ", city='" + city + '\'' +
+                ", lesson='" + lesson + '\'' +
                 '}';
     }
 }
-
