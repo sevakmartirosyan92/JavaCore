@@ -2,48 +2,48 @@ package classwork.students;
 
 import java.util.Scanner;
 
-public class StudentDemo {
+public class StudentDemo implements CommandsBook {
     private static Scanner scanner = new Scanner(System.in);
     private static StudentStorage studentStorage = new StudentStorage();
 
 
     public static void main(String[] args) {
-         studentStorage.add(new Student("Poxos","Poxosyan",25,"095658474","Gyumri","Java"));
-         studentStorage.add(new Student("Petros","Petrosyan",35,"095522222","Erevan","Python"));
-         studentStorage.add(new Student("Martiros","Martirosyan",45,"095650000","Vnadzor","English"));
+        studentStorage.add(new Student("Poxos", "Poxosyan", 25, "095658474", "Gyumri", "Java"));
+        studentStorage.add(new Student("Petros", "Petrosyan", 35, "095522222", "Erevan", "Python"));
+        studentStorage.add(new Student("Martiros", "Martirosyan", 45, "095650000", "Vnadzor", "English"));
 
         boolean run = true;
 
         while (run) {
-            System.out.println("Please input 0 for exit");
-            System.out.println("Please input 1 for add student");
-            System.out.println("Please input 2 for print all students");
-            System.out.println("Please input 3 for print students count");
-             System.out.println("Please input 4 for delete student by index");
-            System.out.println("Please input 5 for print students by lesson");
-            System.out.println("Please input 6 for student,s lesson");
+            System.out.println("Please input" + EXIT + "for exit");
+            System.out.println("Please input" + ADD_STUDENT + "for add student");
+            System.out.println("Please input " + PRINT_ALL_STUDENTS + " for print all students");
+            System.out.println("Please input " + PRINT_STUDENTS_COUNT + " for print students count");
+            System.out.println("Please input " + DELETE_STUDENT_BY_INDEX + " for delete student by index");
+            System.out.println("Please input " + PRINT_STUDENTS_BY_LESSON + " for print students by lesson");
+            System.out.println("Please input " + CHANGE_STUDENT_LESSON + " for student,s lesson");
 
 
             int command = Integer.parseInt(scanner.nextLine());
             switch (command) {
-                case 0:
+                case EXIT:
                     run = false;
                     break;
-                case 1:
+                case ADD_STUDENT:
                     addStudent();
                     break;
-                case 2:
+                case PRINT_ALL_STUDENTS:
                     studentStorage.print();
                     break;
-                case 3:
+                case PRINT_STUDENTS_COUNT:
                     System.out.println(studentStorage.getSize());
                     break;
-                case 4:
+                case DELETE_STUDENT_BY_INDEX:
                     deleteStudentByIndex();
                     break;
-                case 5:
+                case PRINT_STUDENTS_BY_LESSON:
                     searchStudentByLessonName();
-                case 6:
+                case CHANGE_STUDENT_LESSON:
                     changeStudentLesson();
                 default:
                     System.out.println("Invalid command, please try again");
@@ -60,7 +60,7 @@ public class StudentDemo {
         if (student != null) {
             System.out.println("Please input new lesson name");
             String lessonName = scanner.nextLine();
-            if (lessonName !=null||lessonName.trim().equals("")){
+            if (lessonName != null || lessonName.trim().equals("")) {
                 student.setLesson(lessonName.trim());
                 System.out.println("lesson changed for student " + student.getName() + " " + student.getSurname());
             }

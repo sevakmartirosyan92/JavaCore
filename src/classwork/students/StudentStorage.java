@@ -33,7 +33,7 @@ public class StudentStorage {
     public void delete(int index) {
         if (index >= 0 && index < size) {
             for (int i = index; i < size; i++) {
-                array[i] = array[i + 1];
+                array[i] = array[index + 1];
             }
             size--;
             System.out.println("Student deleted");
@@ -44,16 +44,15 @@ public class StudentStorage {
 
     public void printByLesson(String lessonName) {
         for (int i = 0; i < size; i++) {
-            if (array[i].getLesson().equals(lessonName)) {
+            if (array[i].getLesson().equals(lessonName)){
                 System.out.println(array[i]);
             }
         }
     }
-
     public Student getStudentByIndex(int index) {
         if (index >= 0 && index < size) {
             return array[index];
         }
         return null;
     }
-}
+    }
