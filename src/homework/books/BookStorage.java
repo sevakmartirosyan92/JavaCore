@@ -1,7 +1,5 @@
 package homework.books;
 
-import classwork.students.Student;
-
 public class BookStorage {
     private Book[] array = new Book[10];
     private int size = 0;
