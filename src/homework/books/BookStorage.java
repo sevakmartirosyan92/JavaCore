@@ -45,4 +45,15 @@ public class BookStorage {
 
         }
     }
+
+    public void printBooksByPriceRange(int min, int max) {
+        for (int i = 0; i < size; i++) {
+            Book book = array[i];
+            if (book.getPrice() >= min && book.getPrice() <= max) {
+                System.out.println(book);
+            }
+
+
+        }
+    }
 }

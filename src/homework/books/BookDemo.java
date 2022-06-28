@@ -39,12 +39,21 @@ public class BookDemo implements Commands {
                     printBookByGenre();
                     break;
                 case PRINT_BOOKS_BY_PRICE_RANGE:
+                    printBooksByPriceRange();
                     break;
                 default:
                     System.out.println("Invalid command, please try again");
                     break;
             }
         }
+    }
+
+    private static void printBooksByPriceRange() {
+        System.out.println("Please input min, max prices");
+        String range = scanner.nextLine();
+        int min = Integer.parseInt(range.split(",")[0]);
+        int max = Integer.parseInt(range.split(",")[1]);
+        bookStorage.printBooksByPriceRange(min,max);
     }
 
     private static void printBookByGenre() {
