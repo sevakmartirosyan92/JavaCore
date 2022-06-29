@@ -51,8 +51,8 @@ public class BookDemo implements Commands {
     private static void printBooksByPriceRange() {
         System.out.println("Please input min, max prices");
         String range = scanner.nextLine();
-        int min = Integer.parseInt(range.split(",")[0]);
-        int max = Integer.parseInt(range.split(",")[1]);
+        double min = Double.parseDouble(range.split(",")[0]);
+        double max = Double.parseDouble(range.split(",")[1]);
         bookStorage.printBooksByPriceRange(min,max);
     }
 

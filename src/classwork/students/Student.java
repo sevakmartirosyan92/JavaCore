@@ -16,7 +16,6 @@ public class Student {
         this.city = city;
         this.lesson = lesson;
     }
-
     public Student(String name, String surname, int age, String phoneNumber, String city) {
     }
 

@@ -3,8 +3,8 @@ package classwork.students;
 import java.util.Scanner;
 
 public class StudentDemo implements CommandsBook {
-    private static Scanner scanner = new Scanner(System.in);
-    private static StudentStorage studentStorage = new StudentStorage();
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final StudentStorage studentStorage = new StudentStorage();
 
 
     public static void main(String[] args) {

@@ -38,17 +38,16 @@ public class BookStorage {
 
     public void printBooksByGenre(String genre) {
         for (int i = 0; i < size; i++) {
-            if (array[i].getGenre().contains(genre))
+            if (array[i].getGenre().equals(genre))
                 System.out.println(array[i]);
 
         }
     }
 
-    public void printBooksByPriceRange(int min, int max) {
+    public void printBooksByPriceRange(double min, double max) {
         for (int i = 0; i < size; i++) {
-            Book book = array[i];
-            if (book.getPrice() >= min && book.getPrice() <= max) {
-                System.out.println(book);
+            if (array[i].getPrice() >= min && array[i].getPrice() <= max) {
+                System.out.println(array[i]);
             }
 
 
