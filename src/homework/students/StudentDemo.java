@@ -1,6 +1,7 @@
 package homework.students;
 
 import homework.students.command.CommandsStudent;
+import homework.students.exception.LessonNotFoundException;
 import homework.students.model.Lesson;
 import homework.students.model.Student;
 import homework.students.storage.LessonStorage;
@@ -29,7 +30,13 @@ public class StudentDemo implements CommandsStudent {
 
         while (run) {
             CommandsStudent.printCommands();
-            int command = Integer.parseInt(scanner.nextLine());
+            int command;
+            try {
+                command = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                command = -1;
+            }
+
             switch (command) {
                 case EXIT:
                     run = false;
@@ -89,14 +96,15 @@ public class StudentDemo implements CommandsStudent {
             lessonStorage.print();
             System.out.println("Please choose lesson index");
             int lessonIndex = Integer.parseInt(scanner.nextLine());
-            Lesson lesson = lessonStorage.getLessonByIndex(lessonIndex);
-            if (lesson == null) {
-                System.out.println("Please input correct index");
-                changeStudentLesson();
-            } else {
+            try {
+                Lesson lesson = lessonStorage.getLessonByIndex(lessonIndex);
                 student.setLesson(lesson);
                 System.out.println("Lesson changed!");
+            }catch (LessonNotFoundException e){
+                System.out.println("Please input correct index");
+                changeStudentLesson();
             }
+
         } else {
             System.out.println("invalid index, please try again");
         }
@@ -123,11 +131,8 @@ public class StudentDemo implements CommandsStudent {
             lessonStorage.print();
             System.out.println("Please choose lesson index");
             int lessonIndex = Integer.parseInt(scanner.nextLine());
-            Lesson lesson = lessonStorage.getLessonByIndex(lessonIndex);
-            if (lesson == null) {
-                System.out.println("Please input correct index");
-                addStudent();
-            } else {
+            try {
+                Lesson lesson = lessonStorage.getLessonByIndex(lessonIndex);
                 System.out.println("Please input student name");
                 String name = scanner.nextLine();
                 System.out.println("Please input student surname");
@@ -144,8 +149,10 @@ public class StudentDemo implements CommandsStudent {
                 Student student = new Student(name, surname, age, phoneNumber, city, lesson);
                 studentStorage.add(student);
                 System.out.println("Thank you, student added");
+            } catch (LessonNotFoundException e) {
+                System.out.println(e.getMessage());
+                addStudent();
             }
-
 
         }
 

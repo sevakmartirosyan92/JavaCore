@@ -1,5 +1,6 @@
 package homework.students.storage;
 
+import homework.students.exception.LessonNotFoundException;
 import homework.students.model.Lesson;
 
 
@@ -44,10 +45,12 @@ public class LessonStorage {
             System.out.println("Index out of bounds");
         }
     }
-    public Lesson getLessonByIndex(int index) {
+    public Lesson getLessonByIndex(int index) throws LessonNotFoundException {
         if (index >= 0 && index < size) {
             return array[index];
+        }else {
+            throw new LessonNotFoundException("Lesson with " + index + " index does not exists");
         }
-        return null;
+
     }
     }

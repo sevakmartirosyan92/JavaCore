@@ -3,17 +3,32 @@ package classwork.lesson17;
 public class ExceptionDemo {
 
     public static void main(String[] args) {
-        int d = 0;
+        String a = "+t76";
         try {
-            int a = 42 / d;
-            System.out.println(a);
-        } catch (ArithmeticException e) {//это является простым классом!!!
-            System.out.println("Please change your number. Divide by 0");
+            int n = Integer.parseInt(a.trim());
+            System.out.println(n * 2);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
         }
 
 
-
-        System.out.println("Hello");
-        System.out.println("Java");
+        try {
+            method2();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("hello");
     }
+
+    static void method1(int t) throws Exception {
+        if (t == 8) {
+            throw new Exception("inch vor ban");
+        }
+        System.out.println("sdfgb");
+    }
+
+    static void method2() throws Exception {
+        method1(4);
+    }
+
 }
