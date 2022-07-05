@@ -1,4 +1,4 @@
-package homework.chapter8.area;
+package classwork.chapter8.area;
 
 public class Figure {
     double dim1;

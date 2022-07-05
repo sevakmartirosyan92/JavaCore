@@ -1,4 +1,4 @@
-package homework.chapter8;
+package classwork.chapter8;
 
 //создать суперкласс!
 public class A {

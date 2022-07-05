@@ -1,4 +1,4 @@
-package homework.chapter8.override;
+package classwork.chapter8.override;
 
 public class A {
     int i, j;

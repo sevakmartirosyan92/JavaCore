@@ -1,4 +1,4 @@
-package homework.bracechecker;
+package classwork.bracechecker;
 
 public class Stack {
     private int array[] = new int[10];

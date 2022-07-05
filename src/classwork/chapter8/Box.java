@@ -1,4 +1,4 @@
-package homework.chapter8;
+package classwork.chapter8;
 
 //в этой программе наследования применяется для расширения класса Box
 public class Box {

@@ -1,4 +1,4 @@
-package homework.chapter8.area;
+package classwork.chapter8.area;
 
 public class FindArea {
     public static void main(String[] args) {

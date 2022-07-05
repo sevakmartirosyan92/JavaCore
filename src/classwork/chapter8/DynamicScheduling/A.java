@@ -1,4 +1,4 @@
-package homework.chapter8.DynamicScheduling;
+package classwork.chapter8.DynamicScheduling;
 
 class A {
     void callme() {

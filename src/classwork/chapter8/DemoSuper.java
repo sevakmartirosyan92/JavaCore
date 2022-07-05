@@ -1,4 +1,4 @@
-package homework.chapter8;
+package classwork.chapter8;
 
 public class DemoSuper {
     public static void main(String[] args) {
