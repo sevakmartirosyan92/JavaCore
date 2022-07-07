@@ -18,7 +18,10 @@ public class BookDemo implements Commands {
         Author walter = new Author("Jess", "Walter", "jesswalter94.com", "Male");
         Author egan = new Author("Jennifer", "Egan", "jenniferegan74.com", "Female");
         Author kukafka = new Author("Danya", "Kukafka", "danyakukafka88.com", "Female");
-
+        authorStorage.add(walter);
+        authorStorage.add(egan);
+        authorStorage.add(kukafka);
+ //add chq anum vonc tpi
         bookStorage.add(new Book("The Angel of Rome", walter, 60, 4, "short story"));
         bookStorage.add(new Book("The Candy House", egan, 145, 8, "novel"));
        bookStorage.add(new Book("Notes on an Execution", kukafka, 75, 2, "contemporary classic"));
@@ -32,10 +35,11 @@ public class BookDemo implements Commands {
             System.out.println("Please input " + PRINT_BOOKS_BY_AUTHOR + " for print books by author name");
             System.out.println("Please input " + PRINT_BOOKS_BY_GENRE + " for print books by genre");
             System.out.println("Please input " + PRINT_BOOKS_BY_PRICE_RANGE + " for print books by price range");
-            System.out.println("Please input " + PRINT_AUTHOR_BY_NAME + " for print author by name");
+            System.out.println("Plea2se input " + PRINT_AUTHOR_BY_NAME + " for print author by name");
             System.out.println("Please input " + PRINT_AUTHOR_BY_SURNAME + " for print author by surname");
             System.out.println("Please input " + PRINT_AUTHOR_BY_EMAIL + " for print author by email");
             System.out.println("Please input " + PRINT_AUTHOR_BY_GENDER + " for print author by gender");
+            System.out.println("Please input " + PRINT_ALL_AUTHORS + " for print all authors");
 
             int command = Integer.parseInt(scanner.nextLine());
             switch (command) {

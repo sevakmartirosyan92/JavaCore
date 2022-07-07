@@ -1,7 +1,6 @@
 package homework.books.storage;
 
 import homework.books.model.Author;
-import homework.books.model.Book;
 
 public class AuthorStorage {
     private Author[] array = new Author[10];
