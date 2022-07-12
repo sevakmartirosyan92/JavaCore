@@ -1,6 +1,7 @@
-package homework.books.command;
+package homework.students.commands;
 
 public interface Commands {
+
     int LOGOUT = 0;
     int ADD_STUDENT = 1;
     int PRINT_ALL_STUDENTS = 2;
