@@ -1,5 +1,4 @@
 package homework.books.storage;
-
 import homework.books.model.Author;
 
 public class AuthorStorage {
@@ -16,9 +15,7 @@ public class AuthorStorage {
 
     private void increaseArray() {
         Author[] temp = new Author[array.length + 10];
-        for (int i = 0; i < size; i++) {
-            temp[i] = array[i];
-        }
+        System.arraycopy(array, 0, temp, 0, size);
         array = temp;
     }
 

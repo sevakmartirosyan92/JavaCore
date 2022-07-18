@@ -1,6 +1,6 @@
 package homework.students.commands;
 
-public interface Commands {
+public interface CommandsStudent {
 
     int LOGOUT = 0;
     int ADD_STUDENT = 1;

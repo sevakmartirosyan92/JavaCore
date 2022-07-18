@@ -1,7 +1,7 @@
 package homework.students;
 
 
-import homework.students.commands.Commands;
+import homework.students.commands.CommandsStudent;
 import homework.students.exception.LessonNotFoundException;
 import homework.students.model.Lesson;
 import homework.students.model.Student;
@@ -14,7 +14,7 @@ import homework.students.storage.UserStorage;
 
 import java.util.Scanner;
 
-import static homework.students.commands.Commands.*;
+import static homework.students.commands.CommandsStudent.*;
 
 public class StudentDemo {
 
@@ -41,7 +41,7 @@ public class StudentDemo {
 
         boolean run = true;
         while (run) {
-            Commands.printLoginCommands();
+            CommandsStudent.printLoginCommands();
             int command;
             try {
                 command = Integer.parseInt(scanner.nextLine());
@@ -115,7 +115,7 @@ public class StudentDemo {
             System.out.println("Welcome, " + currentUser.getName());
             boolean run = true;
             while (run) {
-                Commands.printUserCommands();
+                CommandsStudent.printUserCommands();
                 int command;
                 try {
                     command = Integer.parseInt(scanner.nextLine());
@@ -151,7 +151,7 @@ public class StudentDemo {
         private static void adminLogin() {
             boolean run = true;
             while (run) {
-                Commands.printCommands();
+                CommandsStudent.printCommands();
                 int command;
                 try {
                     command = Integer.parseInt(scanner.nextLine());
