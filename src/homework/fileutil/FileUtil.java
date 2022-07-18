@@ -1,6 +1,8 @@
 package homework.fileutil;
 
 
+import com.sun.xml.internal.ws.encoding.soap.SOAP12Constants;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -15,7 +17,7 @@ public class FileUtil {
         contentSearch();
         findLines();
         printSizeOfPackage();
-
+        createFileWithContent();
     }
 
 
@@ -97,25 +99,38 @@ public class FileUtil {
             System.out.println(size);
         }
     }
-    //այս մեթոդը պետք է սքաններով վերցնի երեք string.
-    // 1 - path պապկի տեղը, թե որտեղ է սարքելու նոր ֆայլը
-    // 2 - fileName ֆայլի անունը, թե ինչ անունով ֆայլ է սարքելու
-    // 3 - content ֆայլի պարունակությունը։ Այսինքն ստեղծված ֆայլի մեջ ինչ է գրելու
-    // որպես արդյունք պապկի մեջ սարքելու է նոր ֆայլ, իրա մեջ էլ լինելու է content-ով տվածը
 
-//        static void createFileWithContent() throws IOException {
-//            System.out.println("Please input path");
-//            String path = scanner.nextLine();
-//
-//            System.out.println("Please input file name ");
-//            String fileName = scanner.nextLine();
-//
-//            System.out.println("Please input content");
-//            String content = scanner.nextLine();
-//            File myFile = new File(path);
-//
-//
-//    }
+    static void createFileWithContent() throws IOException {
+        System.out.println("Please input path");
+        String path = scanner.nextLine();
+
+        System.out.println("Please input file name ");
+        String fileName = scanner.nextLine();
+
+        System.out.println("Please input content");
+        String content = scanner.nextLine();
+        File myFile = new File(path);
+        try {
+            if (myFile.exists() && myFile.isDirectory()) {
+                StringBuilder pathStr = new StringBuilder(path);
+                pathStr.append(fileName);
+                File folder = new File(String.valueOf(pathStr));
+                boolean create = folder.createNewFile();
+                BufferedWriter bw = new BufferedWriter(new FileWriter(String.valueOf(pathStr)));
+                bw.write(content);
+                bw.close();
+                System.out.println("File created");
+                System.out.println(create);
+            }
+        }
+            catch(IOException e){
+                System.out.println(e);
+            }
+        }
+    }
 
 
-}
+
+
+
+
