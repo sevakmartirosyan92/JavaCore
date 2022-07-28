@@ -1,4 +1,4 @@
-package homework.collection;
+package homework.collection.map_interface;
 
 import java.util.ArrayList;
 import java.util.Iterator;

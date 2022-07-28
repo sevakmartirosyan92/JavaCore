@@ -1,4 +1,4 @@
-package homework.collection;
+package homework.collection.listinterface;
 
 import java.util.LinkedList;
 
