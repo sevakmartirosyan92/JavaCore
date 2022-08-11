@@ -1,4 +1,4 @@
-package homework.collection.map_interface;
+package classwork.collection.map_interface;
 
 import java.util.TreeMap;
 

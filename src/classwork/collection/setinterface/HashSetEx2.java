@@ -1,4 +1,4 @@
-package homework.collection.setinterface;
+package classwork.collection.setinterface;
 
 import java.util.HashSet;
 

@@ -1,4 +1,4 @@
-package homework.collection.listinterface;
+package classwork.collection.listinterface;
 
 import java.util.Arrays;
 import java.util.List;
